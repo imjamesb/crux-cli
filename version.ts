@@ -1,1 +1,1 @@
-export default "unversioned";
+export default import.meta.url.match(/(?<=@)[\/]+/g) || "unversioned";

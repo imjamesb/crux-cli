@@ -38,7 +38,10 @@ export async function add(
         body.error.endsWith(")")
       ) {
         return {
-          script: body.error.slice(21, -1),
+          script: new URL(
+            "../" + body.error.slice(21, -1),
+            baseUrl || defaultBaseUrl,
+          ),
           created: false,
         };
       }
@@ -46,7 +49,7 @@ export async function add(
     }
     if (typeof body.id === "string") {
       return {
-        script: body.id,
+        script: new URL("../" + body.id, baseUrl || defaultBaseUrl),
         created: true,
       };
     }

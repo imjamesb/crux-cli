@@ -1,10 +1,9 @@
+import type { CruxApiRequest } from "./types.ts";
 import { base58, encode, fnv1a, log } from "./_deps.ts";
 import { defaultBaseUrl } from "./constants.ts";
 import CruxError from "./error.ts";
 
-export interface CruxAddOptions {
-  /** The base URL to use whilst building the request, defaults to `"https://crux.land/api/"` */
-  baseUrl?: string | URL;
+export interface CruxAddOptions extends CruxApiRequest {
   name: string;
   content: Uint8Array;
 }

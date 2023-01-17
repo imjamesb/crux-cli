@@ -1,9 +1,8 @@
+import type { CruxApiRequest } from "./types.ts";
 import { basename } from "./_deps.ts";
 import add from "./add.ts";
 
-export interface CruxAddFileOptions {
-  /** The base URL to use whilst building the request, defaults to `"https://crux.land/api/"` */
-  baseUrl?: string | URL;
+export interface CruxAddFileOptions extends CruxApiRequest {
   path: string;
 }
 

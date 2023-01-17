@@ -373,10 +373,15 @@ const command = new Command()
               error: (spinner, error) => {
                 if (error instanceof CruxError) {
                   if (error.message === "Tag already exists") {
-                    spinner.info(
-                      "Already published to " +
-                        new URL(`../${inferredName}@${version}`, baseUrl).href,
-                    );
+                    if (version === result.script.pathname.substring(1)) {
+                      spinner.info(
+                        "Already published to " +
+                          new URL(`../${inferredName}@${version}`, baseUrl)
+                            .href,
+                      );
+                    } else {
+                      spinner.fail(error.message);
+                    }
                   } else {
                     spinner.fail(error.message);
                   }

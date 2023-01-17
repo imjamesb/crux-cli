@@ -1,5 +1,6 @@
 // deno.land/std - Standard library
 export { encode } from "https://deno.land/std@0.172.0/encoding/base64.ts";
+export { basename } from "https://deno.land/std@0.172.0/path/mod.ts";
 
 export { spin } from "https://crux.land/spin@0.1.0";
 export { fnv1a } from "https://crux.land/6bxRiQ";

@@ -1,4 +1,4 @@
-import type { CruxApiRequest } from "./types.ts";
+import type { CruxApiRequest } from "./_types.ts";
 import { base58, encode, fnv1a, log } from "./_deps.ts";
 import { defaultBaseUrl } from "./constants.ts";
 import CruxError from "./error.ts";

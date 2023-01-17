@@ -1,4 +1,4 @@
-import type { CruxApiRequest } from "./types.ts";
+import type { CruxApiRequest } from "./_types.ts";
 import { basename } from "./_deps.ts";
 import add from "./add.ts";
 

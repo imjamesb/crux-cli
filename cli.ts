@@ -385,6 +385,10 @@ const command = new Command()
                             .href,
                       );
                     } else {
+                      console.log(
+                        previousScript,
+                        result.script.pathname.substring(1),
+                      );
                       spinner.fail(error.message);
                     }
                   } else {

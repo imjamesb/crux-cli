@@ -308,6 +308,8 @@ const command = new Command()
 
           if (!withAlias || !auth) return;
 
+          let previousScript = undefined as string | undefined;
+
           if (!version) {
             const compute = await spin(
               {
@@ -358,6 +360,7 @@ const command = new Command()
               }
             }
             version = compute.next;
+            previousScript = compute.previous?.script.pathname.substring(1);
           }
           try {
             await spin({
@@ -373,7 +376,9 @@ const command = new Command()
               error: (spinner, error) => {
                 if (error instanceof CruxError) {
                   if (error.message === "Tag already exists") {
-                    if (version === result.script.pathname.substring(1)) {
+                    if (
+                      previousScript === result.script.pathname.substring(1)
+                    ) {
                       spinner.info(
                         "Already published to " +
                           new URL(`../${inferredName}@${version}`, baseUrl)

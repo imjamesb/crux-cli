@@ -1,5 +1,5 @@
 import type { CruxApiRequest } from "./_types.ts";
-import { defaultBaseUrl } from "./constants.ts";
+import { defaultBaseUrl } from "./_constants.ts";
 import CruxError from "./error.ts";
 
 export interface CruxAliasListOptions extends CruxApiRequest {
@@ -32,3 +32,5 @@ export async function aliasList(
   }
   throw new CruxError("Unable to get alias list!");
 }
+
+export default aliasList;

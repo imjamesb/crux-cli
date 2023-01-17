@@ -13,3 +13,5 @@ export async function addFile({ baseUrl, path }: CruxAddFileOptions) {
     content: await Deno.readFile(path),
   });
 }
+
+export default addFile;

@@ -403,6 +403,7 @@ const command = new Command()
     "alias",
     new Command<{ baseUrl: string }>()
       .name("alias")
+      .description("Manage your aliases.")
       .command(
         "request",
         new Command<{ baseUrl: string }>()
